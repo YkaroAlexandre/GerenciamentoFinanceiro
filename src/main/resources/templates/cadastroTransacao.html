@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/cadastroTransacao.css">
+    
+    <title>Cadastro de Finanças</title>
+</head>
+<body>
+
+    <div>
+        <form id="form" action="#" th:action="@{/cadastroTransacao}" th:object="${transacao}" method="post">
+            <table>
+                <h1>Cadastre suas Finanças:</h1>
+
+                <tr>
+                    <td>
+                        <h3>Tipo de Transação:</h3>  
+                        
+                    </td>
+                    <td>
+                        <input type="radio" name="credito" id="" value=credito th:field="*{tipoTransacao}" > Crédito<br>
+                        <input type="radio" name="debito" id="" value=debito th:field="*{tipoTransacao}"> Débito
+                        <p th:if="${#fields.hasErrors('tipoTransacao')}" th:errors="*{tipoTransacao}">Erro no Tipo</p>
+                    </td>
+                </tr>
+                <tr>
+                
+                    <td>
+                        <h3>Data da Transação:</h3>
+                        
+                    </td>
+                    <td>
+                        <input type="date" id="data" th:field="*{dataTransacao}">
+                        <p th:if="${#fields.hasErrors('dataTransacao')}" th:errors="*{dataTransacao}">Erro na Data</p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Valor da Transação:</h3>
+                        
+                    </td>
+                    <td>
+                        <input type="number" id="valor" name="valorTransacao" th:field="*{valorTransacao}"> 
+                        <p th:if="${#fields.hasErrors('valorTransacao')}" th:errors="*{valorTransacao}">Erro no Valor</p>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Descrição da Transação:</h3>
+                        
+                    </td>
+                    <td>
+                        <input type="text" id="descricao" name="descricao" th:field="*{descricao}"> 
+                        <p th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}">Erro na Descriçao</p>
+
+                    </td>
+                </tr>
+                
+                
+                
+                <tr >
+                    <td></td>
+                    <td>
+                        <input class="botoes" id="buttom_s" type="submit" title="enviar">
+                        <input class="botoes" id="buttom_c" type="reset" title="apagar">
+                    </td>
+                    
+                    
+                </tr>
+                
+                
+            </table>
+        </form>
+    </div>
+</body>
+</html>

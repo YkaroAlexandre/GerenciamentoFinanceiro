@@ -1,0 +1,46 @@
+div {
+  width: 100vw;
+  height: 100vh;
+  background: #b9dbff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+  font-family: 'Times New Roman', Times, serif;
+  }
+form{
+  font-size: 30px;
+  border-top: 10px solid white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 550px; 
+  height: 600px;
+  background: #4da3fe;
+  text-align: center;
+
+
+
+}
+input#text{
+
+  text-align: center;
+  padding-left: 150px ;
+  padding-right: 150px ;
+  font-family: 'Times New Roman', Times, serif;
+  height: 30px;
+}
+input#bottom{
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 10px;
+  border-radius: 5px;
+  
+}
+
+  

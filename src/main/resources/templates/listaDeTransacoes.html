@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/listaDeTransacoes.css">
+    
+    <title>Lista de Transações</title>
+</head>
+<body>
+    <h1>Transações cadastradas:</h1>
+    <a id="btn_cadastro" href="./cadastroTransacao">Cadastrar Novo</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo da Transação</th>
+                <th>Data da Transação</th>
+                <th>Valor da Transação</th>
+                <th>Descrição</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="transacao : ${transacao}">
+                <td th:text="${transacao.tipoTransacao}">Tipo da Transação</td>
+                <td th:text="${transacao.dataTransacao}">Data da Transação</td>
+                <td th:text="${transacao.valorTransacao}">Valor da Transação</td>
+                <td th:text="${transacao.descricao}">Descrição</td>
+            
+        </tbody>
+      </table>
+</body>
+</html>

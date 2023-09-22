@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    
+    <title>Gerenciamento Financeiro</title>
+</head>
+<body>
+    
+    <div id="div_form">
+        <form id="form" action="#" th:action="@{/}" th:object="${login}" method="post">
+            <table id="tbl_login">
+                
+                <tr>
+                    <td>
+                        <h1>LOGIN</h1>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><input placeholder="Digite seu e-mail:" type="text" th:field="*{email}" id="text"></td>
+                </tr>
+                <tr>
+                    <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Erro no Email</td>
+
+                </tr>
+
+                <tr>
+                    <td><input placeholder="Digite sua senha:" type="text" th:field="*{senha}" id="text"></td>
+                </tr>
+                <tr>
+                    <td th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}">Erro na Senha</td>
+
+                </tr>
+                <tr>
+                    <td>
+
+                        <input id="bottom" type="submit" title="enviar">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

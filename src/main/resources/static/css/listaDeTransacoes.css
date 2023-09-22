@@ -1,0 +1,35 @@
+body{
+  display: flex;
+  flex-direction: column;
+  background-color: #b9dbff;
+}
+table {
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
+    background-color: #FFF;
+    border: 1px solid #E5E5E5;
+  }
+  
+  thead {
+    background-color: #4da3fe;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+  }
+
+#btn_cadastro{
+  width: 200px;
+  align-items: end;
+  border: solid 2px #4da3fe;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: white;
+  text-align: center;
+  text-decoration: double;
+  padding: 10px;
+
+  
+}
+
