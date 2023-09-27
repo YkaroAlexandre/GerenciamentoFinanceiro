@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/cadastroCSV.css">
+    
+    <title>Cadastro de Finanças</title>
+</head>
+<body>
+
+    <div>
+        <form id="form" action="#" th:action="@{/cadastroCSV}" th:object="${csv}" method="post">
+            <h1>Importe o CSV</h1>
+            <input type="file" th:field="*{file}">
+            <input class="botoes" id="buttom_s" type="submit" title="enviar">
+
+        </form>
+    </div>
+</body>
+</html>

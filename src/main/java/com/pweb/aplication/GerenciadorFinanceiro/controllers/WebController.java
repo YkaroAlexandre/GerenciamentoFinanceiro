@@ -10,11 +10,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.pweb.aplication.GerenciadorFinanceiro.models.Csv;
 import com.pweb.aplication.GerenciadorFinanceiro.models.Login;
 import com.pweb.aplication.GerenciadorFinanceiro.models.Transacao;
 import com.pweb.aplication.GerenciadorFinanceiro.repositories.TransacaoRepository;
@@ -59,9 +58,7 @@ public class WebController implements WebMvcConfigurer {
 	
 	@PostMapping("/cadastroTransacao")
 	public String checkPersonInfo(@Valid Transacao transacao, BindingResult bindingResult) {
-		System.out.println("Erro");
 		if (bindingResult.hasErrors()) {
-			System.out.println("Entrou no if");
 			if (bindingResult.hasErrors()) {
 				for (FieldError error : bindingResult.getFieldErrors()) {
 					System.out.println("Campo com erro: " + error.getField());
@@ -73,14 +70,27 @@ public class WebController implements WebMvcConfigurer {
 		}
 
 
-		System.out.println(transacao.getID());
-		System.out.println(transacao.getTipoTransacao());
-		System.out.println(transacao.getDataTransacao());
-		System.out.println(transacao.getValorTransacao());
-		System.out.println(transacao.getDescricao());
+		
 		transacaoRepository.save(transacao);
 
 
+		return "redirect:/listaDeTransacoes";
+	}
+
+
+	@GetMapping("/cadastroCSV")
+	public String showForm(Csv csv) {
+		return "cadastroCSV";
+	}
+
+	@PostMapping("/cadastroCSV")
+	public String checkPersonInfo(@Valid Csv csv, BindingResult bindingResult) {
+
+		if (bindingResult.hasErrors()) {
+			return "cadastroCSV";
+		}
+
+		
 		return "redirect:/listaDeTransacoes";
 	}
 

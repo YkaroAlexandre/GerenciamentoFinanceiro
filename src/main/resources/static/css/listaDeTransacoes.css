@@ -18,7 +18,7 @@ table {
     color: #FFFFFF;
   }
 
-#btn_cadastro{
+.btn_cadastro{
   width: 200px;
   align-items: end;
   border: solid 2px #4da3fe;
